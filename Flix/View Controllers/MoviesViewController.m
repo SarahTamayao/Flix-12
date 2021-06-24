@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *movies;
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -27,6 +28,7 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    [self.activityIndicator startAnimating];
     
     [self fetchMovies];
     
@@ -53,15 +55,17 @@
                               
                self.movies = dataDictionary[@"results"];
                
-               for (NSDictionary *movie in self.movies){
-                   NSLog(@"%@", movie[@"title"]);
-                   
-               }
+//               for (NSDictionary *movie in self.movies){
+//                   NSLog(@"%@", movie[@"title"]);
+//
+//               }
                
                [self.tableView reloadData];
+               [self.activityIndicator stopAnimating];
               
            }
                 [self.refreshControl endRefreshing];
+        
        }];
     [task resume];
 }
