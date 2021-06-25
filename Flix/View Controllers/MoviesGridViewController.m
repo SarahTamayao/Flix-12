@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) NSArray *movies;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -24,6 +25,7 @@
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.searchBar.delegate = self;
     
     [self fetchMovies];
     
@@ -32,7 +34,7 @@
     layout.minimumInteritemSpacing = 5;
     layout.minimumLineSpacing = 5;
     
-    CGFloat postersPerLine = 2;
+    CGFloat postersPerLine = 3;
     CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postersPerLine-1)) / postersPerLine;
     CGFloat itemHeight = itemWidth * 1.5;
     
@@ -63,15 +65,24 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    UITableViewCell *tappedCell = sender;
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
+    NSDictionary *movie = self.movies[indexPath.row];
+    
+    MoviesGridViewController *collectionViewController = [segue destinationViewController];
+    collectionViewController.movie = movie;
 }
-*/
+
+
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
@@ -92,6 +103,8 @@
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.movies.count;
 }
+
+
 
 
 @end
