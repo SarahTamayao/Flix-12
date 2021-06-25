@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
 
@@ -38,11 +39,47 @@
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"overview"];
     
+    NSString *release_date = self.movie[@"release_date"];
+    self.dateLabel.text = [self parseDate:release_date];
+    
+    
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
-    //[self.view bringSubviewToFront:self.posterView];
+    [self.dateLabel sizeToFit];
 }
 
+//"2021-06-17"
+-(NSString *)parseDate:(NSString *)date{
+    NSString *string_date = @"";
+    NSDictionary *month_pairs = @{@"01" : @"January",
+        @"02" : @"February",
+        @"03" : @"March",
+        @"04" : @"April",
+        @"05" : @"May",
+        @"06" : @"June",
+        @"07" : @"July",
+        @"08" : @"August",
+        @"09" : @"September",
+        @"10" : @"October",
+        @"11" : @"November",
+        @"12" : @"December"};
+    
+    NSArray *date_arr = [date componentsSeparatedByString:@"-"];
+    
+    NSString *month = month_pairs[date_arr[1]];
+    NSString *day = date_arr[2];
+    NSString *year = date_arr[0];
+    
+    string_date = [string_date stringByAppendingString:month];
+    string_date = [string_date stringByAppendingString:@" "];
+    string_date = [string_date stringByAppendingString:day];
+    string_date = [string_date stringByAppendingString:@", "];
+    string_date = [string_date stringByAppendingString:year];
+    
+    
+    return string_date;
+    
+}
 /*
 #pragma mark - Navigation
 

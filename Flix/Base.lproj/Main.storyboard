@@ -151,7 +151,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCq-9x-V3I">
-                                        <rect key="frame" x="137" y="179" width="260" height="23"/>
+                                        <rect key="frame" x="136" y="200" width="260" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <nil key="textColor"/>
@@ -172,6 +172,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBx-NS-ttJ">
+                                        <rect key="frame" x="136" y="173" width="36" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="WHm-5e-6kG"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="wB1-h9-wQN"/>
@@ -183,6 +190,7 @@
                     <navigationItem key="navigationItem" id="yA3-zI-TPV"/>
                     <connections>
                         <outlet property="backdropView" destination="hgG-xH-Uke" id="pFF-w9-hvz"/>
+                        <outlet property="dateLabel" destination="xBx-NS-ttJ" id="RW7-DG-IXt"/>
                         <outlet property="posterView" destination="40h-PT-PI6" id="gTq-Fh-QgG"/>
                         <outlet property="synopsisLabel" destination="nPT-Us-CCj" id="aeJ-TY-UTf"/>
                         <outlet property="titleLabel" destination="bCq-9x-V3I" id="xrf-zr-wo3"/>
@@ -190,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5H-zG-PtX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-255" y="1904"/>
+            <point key="canvasLocation" x="600" y="1923"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9cj-Em-YHa">
@@ -229,11 +237,11 @@
             </objects>
             <point key="canvasLocation" x="-254" y="271"/>
         </scene>
-        <!--Item-->
+        <!--Gallery View-->
         <scene sceneID="IaA-5s-D72">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KYF-PD-D92" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mEC-J8-Jmc"/>
+                    <tabBarItem key="tabBarItem" title="Gallery View" id="mEC-J8-Jmc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hdx-Sq-N2c">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
