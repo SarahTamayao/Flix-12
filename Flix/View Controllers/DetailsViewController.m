@@ -7,6 +7,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "TrailerViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backdropView;
@@ -41,6 +42,12 @@
     
     NSString *release_date = self.movie[@"release_date"];
     self.dateLabel.text = [self parseDate:release_date];
+    
+//    UITabBar *tabBar = self.tabBarController.tabBar;
+//    [tabBar setBackgroundImage:[UIImage imageNamed:@"banner"] forBarMetrics:UIBarMetricsDefault];
+//    tabBar.tintColor = [UIColor colorWithRed:1.5 green:0.5 blue:0.5 alpha:0.8];
+//
+   
     
     
     [self.titleLabel sizeToFit];
@@ -80,14 +87,14 @@
     return string_date;
     
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    TrailerViewController *tvc = segue.destinationViewController;
+    tvc.movieID = self.movie[@"id"];
 }
-*/
+
 
 @end

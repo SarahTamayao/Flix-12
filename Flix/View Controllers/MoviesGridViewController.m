@@ -34,7 +34,7 @@
         shadow.shadowOffset = CGSizeMake(2, 2);
         shadow.shadowBlurRadius = 4;
         navigationBar.titleTextAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:22],
-                                              NSForegroundColorAttributeName : [UIColor colorWithRed:250 green:250 blue:250 alpha:0.8],
+                                              NSForegroundColorAttributeName : [UIColor colorWithRed:250 green:250 blue:250 alpha:1],
                                               NSShadowAttributeName : shadow};
     
     
@@ -46,8 +46,8 @@
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
     
-    layout.minimumInteritemSpacing = 5;
-    layout.minimumLineSpacing = 5;
+    layout.minimumInteritemSpacing = 0;
+    layout.minimumLineSpacing = 0;
     
     CGFloat postersPerLine = 3;
     CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postersPerLine-1)) / postersPerLine;
