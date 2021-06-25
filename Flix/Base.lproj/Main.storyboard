@@ -126,7 +126,7 @@
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Oy-PB-HZX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="9Jv-gW-Dl4"/>
                     <connections>

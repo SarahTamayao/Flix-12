@@ -25,6 +25,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Movies";
+        UINavigationBar *navigationBar = self.navigationController.navigationBar;
+        [navigationBar setBackgroundImage:[UIImage imageNamed:@"banner"] forBarMetrics:UIBarMetricsDefault];
+        navigationBar.tintColor = [UIColor colorWithRed:1.5 green:0.5 blue:0.5 alpha:0.8];
+        
+        NSShadow *shadow = [NSShadow new];
+        shadow.shadowColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
+        shadow.shadowOffset = CGSizeMake(2, 2);
+        shadow.shadowBlurRadius = 4;
+        navigationBar.titleTextAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:22],
+                                              NSForegroundColorAttributeName : [UIColor colorWithRed:250 green:250 blue:250 alpha:0.8],
+                                              NSShadowAttributeName : shadow};
+    
+  
         
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -69,6 +84,8 @@
         
        }];
     [task resume];
+    
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

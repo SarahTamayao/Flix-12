@@ -9,9 +9,10 @@
 #import "MovieCollectionCell.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSArray *movies;
+@property (strong, nonatomic) NSArray *filteredMovies;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
@@ -22,6 +23,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = @"Collection";
+        UINavigationBar *navigationBar = self.navigationController.navigationBar;
+        [navigationBar setBackgroundImage:[UIImage imageNamed:@"banner"] forBarMetrics:UIBarMetricsDefault];
+        navigationBar.tintColor = [UIColor colorWithRed:1.5 green:0.5 blue:0.5 alpha:0.8];
+        
+        NSShadow *shadow = [NSShadow new];
+        shadow.shadowColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
+        shadow.shadowOffset = CGSizeMake(2, 2);
+        shadow.shadowBlurRadius = 4;
+        navigationBar.titleTextAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:22],
+                                              NSForegroundColorAttributeName : [UIColor colorWithRed:250 green:250 blue:250 alpha:0.8],
+                                              NSShadowAttributeName : shadow};
+    
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -54,7 +69,10 @@
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                               
                self.movies = dataDictionary[@"results"];
+               self.filteredMovies = self.movies;
                [self.collectionView reloadData];
+               
+
     
               
            }
@@ -104,6 +122,25 @@
     return self.movies.count;
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+
+    if (searchText.length != 0) {
+
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+            return [evaluatedObject[@"title"] containsString:searchText];
+        }];
+        self.movies = [self.movies filteredArrayUsingPredicate:predicate];
+
+
+    }
+    else {
+        self.movies = self.filteredMovies;
+        [self.view endEditing:YES];
+    }
+
+    [self.collectionView reloadData];
+
+}
 
 
 
