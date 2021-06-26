@@ -29,7 +29,7 @@
     self.navigationItem.title = @"Movies";
         UINavigationBar *navigationBar = self.navigationController.navigationBar;
         [navigationBar setBackgroundImage:[UIImage imageNamed:@"banner"] forBarMetrics:UIBarMetricsDefault];
-        navigationBar.tintColor = [UIColor colorWithRed:1.5 green:0.5 blue:0.5 alpha:0.8];
+        navigationBar.tintColor = [UIColor colorWithRed:250 green:250 blue:250 alpha:0.8];
         
         NSShadow *shadow = [NSShadow new];
         shadow.shadowColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
@@ -71,10 +71,6 @@
                               
                self.movies = dataDictionary[@"results"];
                
-//               for (NSDictionary *movie in self.movies){
-//                   NSLog(@"%@", movie[@"title"]);
-//
-//               }
                
                [self.tableView reloadData];
               
@@ -114,7 +110,6 @@
                                         
                                         // imageResponse will be nil if the image is cached
                                         if (imageResponse) {
-                                            NSLog(@"Image was NOT cached, fade in image");
                                             cell.posterView.alpha = 0.0;
                                             cell.posterView.image = image;
                                             
@@ -124,7 +119,6 @@
                                             }];
                                         }
                                         else {
-                                            NSLog(@"Image was cached so just update the image");
                                             cell.posterView.image = image;
                                         }
                                     }

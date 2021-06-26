@@ -27,7 +27,7 @@
     self.navigationItem.title = @"Collection";
         UINavigationBar *navigationBar = self.navigationController.navigationBar;
         [navigationBar setBackgroundImage:[UIImage imageNamed:@"banner"] forBarMetrics:UIBarMetricsDefault];
-        navigationBar.tintColor = [UIColor colorWithRed:1.5 green:0.5 blue:0.5 alpha:0.8];
+        navigationBar.tintColor = [UIColor colorWithRed:250 green:250 blue:250 alpha:0.8];
         
         NSShadow *shadow = [NSShadow new];
         shadow.shadowColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
@@ -133,7 +133,6 @@
         }];
         
         self.filteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
-        NSLog(@"ggg");
 
 
     }
