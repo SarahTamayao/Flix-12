@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="198" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OUw-Ms-h71">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="198" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OUw-Ms-h71">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="198" id="ZBJ-1m-9Sj" customClass="MovieCell">
@@ -29,21 +28,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="198"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbv-wR-tWb">
-                                                    <rect key="frame" x="11" y="11" width="124" height="176"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cbv-wR-tWb">
+                                                    <rect key="frame" x="8" y="8" width="124" height="176"/>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="176" id="hoL-dY-DCA"/>
+                                                        <constraint firstAttribute="width" constant="124" id="scu-ga-OnF"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A Quiet Place Part II" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygf-Y4-Ukb">
-                                                    <rect key="frame" x="162" y="11" width="232" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Quiet Place Part II" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygf-Y4-Ukb">
+                                                    <rect key="frame" x="140" y="8" width="266" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                     <color key="textColor" systemColor="systemGray6Color"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkh-wI-iM5">
-                                                    <rect key="frame" x="162" y="60" width="232" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkh-wI-iM5">
+                                                    <rect key="frame" x="140" y="46" width="266" height="142.5"/>
                                                     <string key="text">Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the creatures that hunt by sound are not the only threats that lurk beyond the sand </string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemGray6Color"/>
@@ -51,6 +51,18 @@
                                                     <string key="userLabel">Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the creatures that hunt by sound are not the only threats that lurk beyond the sand</string>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zkh-wI-iM5" firstAttribute="top" secondItem="ygf-Y4-Ukb" secondAttribute="bottom" constant="8" id="0KL-Nw-m4w"/>
+                                                <constraint firstItem="ygf-Y4-Ukb" firstAttribute="top" secondItem="cbv-wR-tWb" secondAttribute="top" id="9YT-Jf-25Z"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cbv-wR-tWb" secondAttribute="bottom" constant="8" id="DCW-T2-SwK"/>
+                                                <constraint firstAttribute="trailing" secondItem="zkh-wI-iM5" secondAttribute="trailing" constant="8" id="NnR-3d-ulb"/>
+                                                <constraint firstItem="zkh-wI-iM5" firstAttribute="leading" secondItem="cbv-wR-tWb" secondAttribute="trailing" constant="8" symbolic="YES" id="XFj-aU-5ib"/>
+                                                <constraint firstItem="ygf-Y4-Ukb" firstAttribute="leading" secondItem="cbv-wR-tWb" secondAttribute="trailing" constant="8" id="bYi-Mq-kGO"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zkh-wI-iM5" secondAttribute="bottom" constant="8" id="bpN-RK-eOJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="ygf-Y4-Ukb" secondAttribute="trailing" constant="8" id="l9n-Do-vg4"/>
+                                                <constraint firstItem="cbv-wR-tWb" firstAttribute="top" secondItem="tN4-Rv-8rw" secondAttribute="top" constant="8" id="mcr-SI-ZPt"/>
+                                                <constraint firstItem="cbv-wR-tWb" firstAttribute="leading" secondItem="tN4-Rv-8rw" secondAttribute="leading" constant="8" id="sO1-E0-cod"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.14875864250000001" green="0.14875864250000001" blue="0.14875864250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -70,6 +82,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OUw-Ms-h71" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ECy-PB-DUf"/>
+                            <constraint firstItem="OUw-Ms-h71" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IEk-c5-tp1"/>
+                            <constraint firstItem="OUw-Ms-h71" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XLh-wL-wdW"/>
+                            <constraint firstAttribute="bottom" secondItem="OUw-Ms-h71" secondAttribute="bottom" id="buc-pi-Pvx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="abE-kJ-cSW"/>
                     <connections>
@@ -79,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-254" y="1108"/>
+            <point key="canvasLocation" x="-255.07246376811597" y="1106.9196428571429"/>
         </scene>
         <!--Movies Grid View Controller-->
         <scene sceneID="yfx-gY-e9N">
@@ -303,7 +321,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="hIX-Sq-DI9"/>
-        <segue reference="BDF-sX-8E8"/>
+        <segue reference="yCH-YZ-FmW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="banner" width="960" height="450"/>

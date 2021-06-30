@@ -45,6 +45,8 @@
     self.tableView.delegate = self;
     [self.activityIndicator startAnimating];
     
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
     [self fetchMovies];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -52,6 +54,7 @@
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
     
     
 }
