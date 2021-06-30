@@ -20,6 +20,8 @@
 		A1714B4726852B38005027B6 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1714B4626852B38005027B6 /* MovieCollectionCell.m */; };
 		A1714B4926868BD5005027B6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1714B4826868BD5005027B6 /* WebKit.framework */; };
 		A1714B4C26868C41005027B6 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1714B4B26868C41005027B6 /* TrailerViewController.m */; };
+		A1D09225268CC7DF00CD41CB /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D09224268CC7DF00CD41CB /* Movie.m */; };
+		A1D09229268CDCDA00CD41CB /* MovieAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D09228268CDCDA00CD41CB /* MovieAPIManager.m */; };
 		D19495CFCA3948477B87521E /* Pods_Flix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E4DF7A2F588D4457F4B949 /* Pods_Flix.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,10 @@
 		A1714B4826868BD5005027B6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A1714B4A26868C41005027B6 /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
 		A1714B4B26868C41005027B6 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
+		A1D09223268CC7DF00CD41CB /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		A1D09224268CC7DF00CD41CB /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		A1D09227268CDCDA00CD41CB /* MovieAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieAPIManager.h; sourceTree = "<group>"; };
+		A1D09228268CDCDA00CD41CB /* MovieAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieAPIManager.m; sourceTree = "<group>"; };
 		EA132601BA4788621390A0BA /* Pods-Flix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix.release.xcconfig"; path = "Target Support Files/Pods-Flix/Pods-Flix.release.xcconfig"; sourceTree = "<group>"; };
 		F6E4DF7A2F588D4457F4B949 /* Pods_Flix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +110,7 @@
 		A1714AF1268394A1005027B6 /* Flix */ = {
 			isa = PBXGroup;
 			children = (
+				A1D09226268CDC8100CD41CB /* API */,
 				A1714B1026839F5C005027B6 /* Models */,
 				A1714B0F26839F52005027B6 /* Views */,
 				A1714B0E26839F2D005027B6 /* View Controllers */,
@@ -149,8 +156,19 @@
 		A1714B1026839F5C005027B6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A1D09223268CC7DF00CD41CB /* Movie.h */,
+				A1D09224268CC7DF00CD41CB /* Movie.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A1D09226268CDC8100CD41CB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A1D09227268CDCDA00CD41CB /* MovieAPIManager.h */,
+				A1D09228268CDCDA00CD41CB /* MovieAPIManager.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +286,10 @@
 			files = (
 				A1714AF4268394A1005027B6 /* AppDelegate.m in Sources */,
 				A1714B132683D84B005027B6 /* MovieCell.m in Sources */,
+				A1D09225268CC7DF00CD41CB /* Movie.m in Sources */,
 				A1714B0D26839DBE005027B6 /* MoviesViewController.m in Sources */,
 				A1714B162683F414005027B6 /* DetailsViewController.m in Sources */,
+				A1D09229268CDCDA00CD41CB /* MovieAPIManager.m in Sources */,
 				A1714B4726852B38005027B6 /* MovieCollectionCell.m in Sources */,
 				A1714B05268394A2005027B6 /* main.m in Sources */,
 				A1714AF7268394A1005027B6 /* SceneDelegate.m in Sources */,

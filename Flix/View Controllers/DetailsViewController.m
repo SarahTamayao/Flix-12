@@ -24,23 +24,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = self.movie[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+//    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+//    NSString *posterURLString = self.movie[@"poster_path"];
+//    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+//
+    //NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    NSURL *posterURL = self.movie.posterURL;
     
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [self.posterView setImageWithURL:posterURL];
     
-    NSString *backdropURLString = self.movie[@"backdrop_path"];
-    NSString *fullbackdropURLString = [baseURLString stringByAppendingString:backdropURLString];
+//    NSString *backdropURLString = self.movie[@"backdrop_path"];
+//    NSString *fullbackdropURLString = [baseURLString stringByAppendingString:backdropURLString];
+//    
+//    NSURL *backdropURL = [NSURL URLWithString:fullbackdropURLString];
     
-    NSURL *backdropURL = [NSURL URLWithString:fullbackdropURLString];
-    [self.backdropView setImageWithURL:backdropURL];
+    [self.backdropView setImageWithURL:self.movie.backdropURL];
     
-    self.titleLabel.text = self.movie[@"title"];
-    self.synopsisLabel.text = self.movie[@"overview"];
+    self.titleLabel.text = self.movie.title;
+    self.synopsisLabel.text = self.movie.overview;
     
-    NSString *release_date = self.movie[@"release_date"];
+    NSString *release_date = self.movie.releaseDate;
     self.dateLabel.text = [self parseDate:release_date];
     
 //    UITabBar *tabBar = self.tabBarController.tabBar;
@@ -93,7 +96,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     TrailerViewController *tvc = segue.destinationViewController;
-    tvc.movieID = self.movie[@"id"];
+    tvc.movieID = self.movie.movieID;
 }
 
 
