@@ -43,7 +43,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-https://imgur.com/a/ZiYsG8E.gif
+
 
 GIF created with (ezgif.com/video-to-gif).
 
